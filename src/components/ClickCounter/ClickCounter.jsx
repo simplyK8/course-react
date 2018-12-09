@@ -2,18 +2,18 @@ import React from 'react'
 import Btn from 'components/Btn'
 const MAX_VALUE = 20
 const STEP = 1
-const CLICKS_VALUE = 0
+const CLICKS_COUNT = 0
 
 export default class ClickCounter extends React.Component {
   state = {
-    clicks: CLICKS_VALUE,
+    clicks: CLICKS_COUNT,
     maxValue: MAX_VALUE,
     step: STEP,
   }
 
   handleReset = () => {
     this.setState({
-      clicks: CLICKS_VALUE,
+      clicks: CLICKS_COUNT,
       step: STEP,
       maxValue: MAX_VALUE,
     })
@@ -24,13 +24,13 @@ export default class ClickCounter extends React.Component {
       clicks: this.state.clicks + this.state.step,
     })
   }
-  handleMaxClick = () => {
+  handleIncreaseMaxValue = () => {
     this.setState({
       maxValue: this.state.maxValue + STEP,
     })
   }
 
-  handleMaxStep = () => {
+  handleIncreaseStep = () => {
     this.setState({
       step: this.state.step + STEP,
     })
@@ -75,13 +75,13 @@ export default class ClickCounter extends React.Component {
 
           <Btn
             disabled={this.state.step >= this.state.maxValue - this.state.clicks}
-            onClick={this.handleMaxStep}
+            onClick={this.handleIncreaseStep}
             className="m-t d-block"
           >
             Increase Step
           </Btn>
 
-          <Btn onClick={this.handleMaxClick} className="m-t d-block">
+          <Btn onClick={this.handleIncreaseMaxValue} className="m-t d-block">
             Increase Max
           </Btn>
 
