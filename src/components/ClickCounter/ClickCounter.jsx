@@ -56,7 +56,11 @@ export default class ClickCounter extends React.Component {
 
             <div className="m-t">
               <span className="info-key">clicks left:</span>
-              <span className="text-accent">{this.state.maxValue - this.state.clicks}</span>
+              <span className="text-accent">
+                {this.state.clicks >= this.state.maxValue
+                  ? '0'
+                  : this.state.maxValue - this.state.clicks}
+              </span>
             </div>
 
             <div className="m-t">
