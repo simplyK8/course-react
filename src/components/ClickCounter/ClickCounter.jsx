@@ -68,7 +68,6 @@ export default class ClickCounter extends React.Component {
               <span className="text-accent">{this.state.step}</span>
             </div>
           </div>
-
           <Btn
             disabled={this.state.clicks >= this.state.maxValue}
             onClick={this.handleClick}
@@ -76,7 +75,6 @@ export default class ClickCounter extends React.Component {
           >
             Click
           </Btn>
-
           <Btn
             disabled={this.state.step >= this.state.maxValue - this.state.clicks}
             onClick={this.handleIncreaseStep}
@@ -84,11 +82,9 @@ export default class ClickCounter extends React.Component {
           >
             Increase Step
           </Btn>
-
           <Btn onClick={this.handleIncreaseMaxValue} className="m-t d-block">
             Increase Max
           </Btn>
-
           <Btn onClick={this.handleReset} className="m-t d-block">
             Reset
           </Btn>
